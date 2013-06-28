@@ -5,20 +5,20 @@ $docroot_parent = $url_parts[3];
 $memcache = false;
 echo $docroot_parent;
 
-switch ($docroot_parent) {
-  case 'dev.on.joshuataylor.co':
-    $database_name = 'on_dev';
-    $memcache = true;
-    break;
-  case 'stage.on.joshuataylor.co':
-    $database_name = 'on_stage';
-    $memcache = true;
-    break;
-  case 'on.joshuataylor.co':
-    $database_name = 'on_prod';
-    $memcache = true;
-    break;
-}
+$database_array = array(
+
+  'drupal.linode.joshuataylor.co'	=>	'drupal',
+  'drupal8.linode.joshuataylor.co'	=>	'drupal8,
+
+  'joshuataylor.co'			=>	'joshuataylor.co',
+  'wildsides.com'			=>	'wildsides.com',
+
+  'dev.on.joshuataylor.co'		=>	'on_dev',
+  'stage.on.joshuataylor.co'		=>	'on_stage',
+  'on.joshuataylor.co'			=>	'on_prod',
+);
+
+
 
 $databases = array (
   'default' =>
